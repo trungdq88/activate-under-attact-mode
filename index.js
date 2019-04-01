@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 exports.handler = async (event) => fetch(
     `https://api.cloudflare.com/client/v4/zones/${process.env.ZONE_ID}/settings/security_level`,
     {
-      body: JSON.stringify({value: process.env.MODE || 'under_attack' })
+      body: JSON.stringify({value: process.env.MODE || 'under_attack' }),
       headers: {
         "Content-Type": "application/json",
         "X-Auth-Email": process.env.API_EMAIL,
